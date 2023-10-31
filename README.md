@@ -122,8 +122,11 @@ public class PerceptronSimulation : MonoBehaviour
 ```
 - Работа визуальной модели на примере OR
 - До соприкосновения:
+
 ![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/231cef42-f840-43b3-90ee-3424a64233ac)
+
 - После соприкосновения: 
+
 ![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/895a88bf-b7c5-4654-a3e8-17df6c17e954)
 
 
