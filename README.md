@@ -43,11 +43,11 @@
 - Создал пустой проект на юнити. Добавил в него скрипт с обучением перцептрона.
 - Создал пустой обьект, повесил на него скрипт с перцептроном. Создал для него таблицу истиности.
 
-![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/fc3e7ebc-c30f-46b5-9b2f-444f2e32b4fd)
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/14b9bb2b-4918-43f8-96be-4b007f2ea289)
 
 - Пронаблюдал через консоль как он обучается настраивая веса.
 
-![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/31447814-dd9d-4ba5-ac68-c678f73b6368)
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/0e7ffb26-055b-4ac7-9c34-02728a110824)
 
 - OR - находил нужные веса и обучался довольно быстро.
 - AND - находил нужные веса и обучался спустя 6-7 итераций.
@@ -60,8 +60,9 @@
 - Пронаблюдал количество ошибок в зависимости от эпохи. Занес эти данные в таблицу и построил графики.
 - Необходимое количество эпох обучения зависит от того насколько тяжело подобрать подходящие веса удовлетворяющие таблице истиности.
 
-![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/3f7049ce-c746-4bb8-af4b-9bd5711dbbcf)
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/890387ae-3cb5-42ee-99e4-eb96f679cd98)
 
+(ссылка на таблицу: https://docs.google.com/spreadsheets/d/1rFPY4AlMudMtr-gOVJbo8KesVvOc9S9Vvu6Fz1WHl98/edit#gid=0)
 
 ## Задание 3
 ### Построить визуальную модель работы перцептрона на сцене Unity.
@@ -125,12 +126,11 @@ public class PerceptronSimulation : MonoBehaviour
 - Работа визуальной модели на примере OR
 - До соприкосновения:
 
-![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/231cef42-f840-43b3-90ee-3424a64233ac)
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/4602a538-1b23-4202-9baf-448c73b1bae4)
 
 - После соприкосновения: 
 
-![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/895a88bf-b7c5-4654-a3e8-17df6c17e954)
-
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/a09e44fa-02e5-47a4-a845-09a65ab3c32c)
 
 ## Выводы
 
