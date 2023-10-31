@@ -1,14 +1,14 @@
 # АНАЛИЗ ДАННЫХ И ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ [in GameDev]
-Отчет по лабораторной работе #1 выполнил(а):
-- Иванова Ивана Варкравтовна
-- РИ000024
+Отчет по СЕКРЕТНОЙ лабораторной работе #4 выполнил(а):
+- Холстинин Егор Алексеевич
+- РИ-220943
 Отметка о выполнении заданий (заполняется студентом):
 
 | Задание | Выполнение | Баллы |
 | ------ | ------ | ------ |
-| Задание 1 | # | 60 |
-| Задание 2 | # | 20 |
-| Задание 3 | # | 20 |
+| Задание 1 | * | 60 |
+| Задание 2 | * | 20 |
+| Задание 3 | * | 20 |
 
 знак "*" - задание выполнено; знак "#" - задание не выполнено;
 
@@ -35,95 +35,101 @@
 - ✨Magic ✨
 
 ## Цель работы
-Ознакомиться с основными операторами зыка Python на примере реализации линейной регрессии.
+Познакомиться с работой перцептрона.
 
 ## Задание 1
-### Пошагово выполнить каждый пункт раздела "ход работы" с описанием и примерами реализации задач
+### В проекте Unity реализовать перцептрон, который умеет производить вычисления OR, AND, NAND, XOR. Дать комментарии о корректности работы.
 Ход работы:
-- Произвести подготовку данных для работы с алгоритмом линейной регрессии. 10 видов данных были установлены случайным образом, и данные находились в линейной зависимости. Данные преобразуются в формат массива, чтобы их можно было вычислить напрямую при использовании умножения и сложения.
+- Создал пустой проект на юнити. Добавил в него скрипт с обучением перцептрона.
+- Создал пустой обьект, повесил на него скрипт с перцептроном. Создал для него таблицу истиности.
 
-```py
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/fc3e7ebc-c30f-46b5-9b2f-444f2e32b4fd)
 
-In [ ]:
-#Import the required modules, numpy for calculation, and Matplotlib for drawing
-import numpy as np
-import matplotlib.pyplot as plt
-#This code is for jupyter Notebook only
-%matplotlib inline
+- Пронаблюдал через консоль как он обучается настраивая веса.
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/31447814-dd9d-4ba5-ac68-c678f73b6368)
 
-# define data, and change list to array
-x = [3,21,22,34,54,34,55,67,89,99]
-x = np.array(x)
-y = [2,22,24,65,79,82,55,130,150,199]
-y = np.array(y)
-
-#Show the effect of a scatter plot
-plt.scatter(x,y)
-
-```
-
-- Определите связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
-
+- OR - находил нужные веса и обучался довольно быстро.
+- AND - находил нужные веса и обучался спустя 6-7 итераций.
+- NAND - находил нужные веса и обучался спустя 6-7 итераций.
+- XOR - чем дольше обучался тем хуже становились веса и количество ошибок.
 
 ## Задание 2
-### Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
+### Построить графики зависимости количества эпох от ошибки  обучения. Указать от чего зависит необходимое количество эпох обучения.
 
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+- Пронаблюдал количество ошибок в зависимости от эпохи. Занес эти данные в таблицу и построил графики.
+- Необходимое количество эпох обучения зависит от того насколько тяжело подобрать подходящие веса удовлетворяющие таблице истиности.
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/3f7049ce-c746-4bb8-af4b-9bd5711dbbcf)
 
-```py
-
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
-
-```
 
 ## Задание 3
-### Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
+### Построить визуальную модель работы перцептрона на сцене Unity.
 
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+- Визуальную модель перцептрона я решил построить следующим образом:
+	- Есть два кубика разного цвета символизирующие 1 и 0
+	- При соприкосновении кубик сверху уничтожается а нижний перекрашивается в результат по таблице истиности
+	- Таблицу истиности я наследую от таблицы передаваемой в перцептроны для обучения 
 
-```py
+```C#
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEngine;
 
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
+public class PerceptronSimulation : MonoBehaviour
+{
+	// Start is called before the first frame update
+	public Renderer Renderer;
+	public Material[] Materials;
+	public Perceptron SimulatedPerceptron;
+	private Dictionary<int, int> boolLogic = new();
+
+	void Start()
+	{
+		Renderer = GetComponent<Renderer>();
+		foreach (var logic in SimulatedPerceptron.ts)
+		{
+			boolLogic.TryAdd((int)logic.input.Sum(), (int)logic.output);
+		}
+	}
+
+	private void OnCollisionEnter(Collision other)
+	{
+		if (!other.gameObject.CompareTag("BoolCube"))
+		{
+			return;
+		}
+
+		var output = boolLogic[ConvertColorToInt(Renderer.material.name) +
+		                       ConvertColorToInt(other.gameObject.GetComponent<Renderer>().material.name)];
+		Renderer.material = Materials[output];
+		Destroy(other.gameObject);
+	}
+
+	private static int ConvertColorToInt(string color)
+	{
+		return color.Contains("White") ? 1 : 0;
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+
+	}
+}
 
 ```
+- Работа визуальной модели на примере OR
+- До соприкосновения:
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/231cef42-f840-43b3-90ee-3424a64233ac)
+- После соприкосновения: 
+![image](https://github.com/Yrwlcm/DA-in-GameDev-lab4/assets/99079920/895a88bf-b7c5-4654-a3e8-17df6c17e954)
+
 
 ## Выводы
 
-Абзац умных слов о том, что было сделано и что было узнано.
+В ходе данной лабораторной работы я познакомился с понятием перцептрона. Пронаблюдал то, каким образом его можно обучить. И создал свою визуальную модель его работы.
 
 | Plugin | README |
 | ------ | ------ |
